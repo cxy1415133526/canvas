@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      canvas{
+        border: 1px solid #000;
+      }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        ctx.beginPath();
+        //从坐标为（100,100）的点开始绘制直线
+        ctx.moveTo(100,100);
+        ctx.lineTo(100,160);
+        ctx.lineTo(300,160);
+        ctx.lineTo(300,100);
+        ctx.closePath();
+        ctx.strokeStyle='blue'
+        ctx.lineWidth='10';
+        ctx.stroke();
+        ctx.fillStyle='skyblue'
+        ctx.fill();
+
+
+        //   方法2，直接使用fillRect快捷API
+        // ctx.fillStyle='red';
+        // ctx.fill();
+        // ctx.fillRect(100,100,200,60);
+    </script>
+</body>
+</html>

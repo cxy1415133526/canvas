@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+
+        // 绘制圆弧
+        ctx.beginPath();
+        //圆心坐标（200,200）半径100.从0开始，到1结束，顺时针
+        ctx.arc(200,200,100,0,1,false);
+        ctx.stroke();
+
+         // 绘制圆形
+         ctx.beginPath();
+         ctx.arc(350,100,80,0,Math.PI*2,false);
+         ctx.stroke();
+         ctx.fillStyle='pink';
+         ctx.fill();
+
+          // 同心圆
+          for(var i=0;i<20;i++){
+              ctx.beginPath();
+              ctx.arc(100,100,5*i,Math.PI*2,false);
+              ctx.strokeStyle='green';
+              ctx.stroke();
+          }
+    </script>
+</body>
+</html>

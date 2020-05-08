@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+        
+          // 圆心
+     var x=100;
+     setInterval(function(){
+         //改变圆心位置
+        x++;
+         // 擦除全屏
+        ctx.clearRect(0,0,600,400);
+          // 绘制圆形
+        ctx.beginPath();
+        ctx.arc(x,200,100,0,Math.PI*2,false);
+        ctx.stroke();
+        ctx.fillStyle='lightblue';
+        ctx.fill();
+     },20);
+    </script>
+</body>
+</html>

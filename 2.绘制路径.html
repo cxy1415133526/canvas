@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        // 得到canvas画布
+        var canvas = document.getElementById('canvas');
+        // 画布没有什么用，必须用画布创建渲染上下文才行
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.moveTo(100, 100);
+        ctx.lineTo(200, 200);
+        ctx.lineTo(200, 300);
+        ctx.lineTo(400, 300);
+        ctx.lineTo(400, 100);
+        ctx.closePath();
+
+        ctx.lineWidth='10';
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+        ctx.fillStyle='skyblue';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(180,150);
+        ctx.lineTo(290,60);
+        ctx.lineTo(290,160);
+        ctx.closePath();
+        ctx.strokeStyle= 'orange';
+        ctx.stroke();
+        ctx.fillStyle='#f38';
+        ctx.fill();
+
+    </script>
+</body>
+
+</html>

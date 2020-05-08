@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="480" height="640"></canvas>
+    <script>
+        var canvas=document.getElementById('canvas');
+        var ctx=canvas.getContext('2d');
+         // 保存世界当前的坐标轴的状态（位置、旋转），存档
+        ctx.save();
+         // 移动世界的坐标轴(整个画布)
+        ctx.translate(250,250);
+        //旋转多少弧度，1弧度是57度，
+        ctx.rotate(0.5);
+        ctx.fillRect(-50,-50,100,100);
+         // 恢复世界，读档，把你移动的世界、旋转的世界恢复回去
+         ctx.restore();
+          // 但是我们在世界的原点画方形，即使是整个世界旋转
+            // 也感觉是它自己旋转
+         ctx.arc(150,100,80,0,Math.PI*2,false);
+         ctx.stroke();
+        
+    </script>
+</body>
+</html>
